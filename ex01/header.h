@@ -6,7 +6,16 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 01:01:57 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/09/26 01:01:58 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/09/26 15:27:41 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HEADER_H
+#define HEADER_H
+
+class   PhoneBook
+{
+    
+}
+
+#endif
