@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 23:20:35 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/09/26 15:47:31 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/09/29 11:30:11 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int ac, char *av[])
                 for(int i = 0; av[j][i]; i++)
                 {
                     if(av[j][i] >= 'a' && av[j][i] <= 'z')
-                        av[j][i] -= 32 ;
+                        av[j][i] = std::toupper(av[j][i]);
                     std::cout << av[j][i];
                 } 
             }
