@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 23:20:35 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/09/29 11:30:11 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:50:30 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ int main(int ac, char *av[])
 }
 
 
-/// it should rewrite in the c++ manner 
