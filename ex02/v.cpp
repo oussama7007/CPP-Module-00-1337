@@ -1,35 +1,14 @@
 #include <iostream>
-using namespace std;
-class BankAccount {
-    private:
-        int balance;
+#include <iomanip>
+#include <ctime>
 
-    public:
-        //constructor 
-        BankAccount()
-        {
-            balance = 0;
-        }
-        ~BankAccount()
-        {
-            std::cou
-        }
-        void deposit(int add)
-        {
-            balance +=add ;
-        }
-        void  showbalance()
-        {
-            std::cout << "balance: " << balance;
-        }
-};
+using namespace std;
+
+
+
 
 
 int main()
 {
-    BankAccount mybank;
-    mybank.deposit(1000);
-    mybank.showbalance();
 
-    return 0;
 }

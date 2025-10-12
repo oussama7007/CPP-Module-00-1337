@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 00:39:54 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/06 10:45:47 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/12 10:49:40 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,34 @@ bool    Contact::is_empty()
 {
     return firstName.empty();
 }
+bool    is_empty(std::string &word)
+{
+        for(size_t i = 0; i < word.length(); ++i)
+        {
+            unsigned char c = word[i];
+            if(!((c >= 9 && c <= 13) || c == 32))
+                return false;
+        }
+    return true;        
+}
+bool    is_invalid(std::string &word)
+{
+    if(is_empty(word))
+        return true;
+    for(size_t i = 0; i < word.length(); ++i)
+    {
+            unsigned char c = word[i];
+            if(c < 32 || c > 126)
+                    return true;
+    }
+    return false;
+}
+bool    parse_string( std::string word)
+{
+    if(word.empty() || is_invalid(word))
+        return true;
+    return false;
+}
 void    Contact::set_contact()
 {
     std::cout << "Enter first name: ";
@@ -55,10 +83,11 @@ void    Contact::set_contact()
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, darkestSecret);
 
-    if(firstName.empty() || lastName.empty() || nickname.empty() 
-        || phoneNumber.empty() || darkestSecret.empty())
+  
+    if(parse_string(firstName) || parse_string(lastName) || parse_string(nickname) 
+        || parse_string(phoneNumber) || parse_string(darkestSecret))
     {
-            std::cout << "❌ Contact cannot have empty fields!\n";
+            std::cout << "❌ Contact cannot have invalid char!\n";
         // Reset if invalid
         firstName.clear(); lastName.clear(); nickname.clear();
         phoneNumber.clear(); darkestSecret.clear();        
