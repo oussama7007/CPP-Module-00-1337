@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 23:20:35 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/21 00:21:23 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/21 00:51:43 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int ac, char *av[])
                 {
                     word[i] = std::toupper(word[i]);
                     std::cout << word[i];
-                } 
+                }
                 std::cout << " ";
             }
         }
