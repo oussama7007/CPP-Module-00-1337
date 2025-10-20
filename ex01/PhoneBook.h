@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 01:01:57 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/05 15:50:47 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:07:07 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 class   PhoneBook
 {
+     
    private:
         Contact contacts[8];
         int count;

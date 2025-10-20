@@ -6,14 +6,12 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 16:17:34 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/11 22:52:49 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/20 18:46:06 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include <iostream>
-#include <iomanip>
-#include <ctime>
+
 
 	int Account::_nbAccounts = 0;
 	int Account::_totalAmount = 0;

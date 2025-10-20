@@ -6,13 +6,15 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 00:39:54 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/12 10:49:40 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:03:26 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "PhoneBook.h"
 
+
+/// you need to fix end of file for each time you require 
 PhoneBook::PhoneBook() : count(0), nextIndex(0) {}
 
 std::string     truncate(std::string &str)
@@ -70,29 +72,41 @@ bool    parse_string( std::string word)
         return true;
     return false;
 }
-void    Contact::set_contact()
+bool Contact::set_contact()  
 {
     std::cout << "Enter first name: ";
-    std::getline(std::cin, firstName);
+    if (!std::getline(std::cin, firstName))
+        return false;  
+    
     std::cout << "Enter last name: ";
-    std::getline(std::cin, lastName);
+    if (!std::getline(std::cin, lastName))
+        return false;
+    
     std::cout << "Enter nickname: ";
-    std::getline(std::cin, nickname);
+    if (!std::getline(std::cin, nickname))
+        return false;
+    
     std::cout << "Enter phone number: ";
-    std::getline(std::cin, phoneNumber);
+    if (!std::getline(std::cin, phoneNumber))
+        return false;
+    
     std::cout << "Enter darkest secret: ";
-    std::getline(std::cin, darkestSecret);
+    if (!std::getline(std::cin, darkestSecret))
+        return false;
 
-  
-    if(parse_string(firstName) || parse_string(lastName) || parse_string(nickname) 
-        || parse_string(phoneNumber) || parse_string(darkestSecret))
-    {
-            std::cout << "❌ Contact cannot have invalid char!\n";
-        // Reset if invalid
+    // Validation
+    if (parse_string(firstName) || parse_string(lastName) || 
+        parse_string(nickname) || parse_string(phoneNumber) || 
+        parse_string(darkestSecret)) {
+        std::cout << "❌ Contact cannot have invalid char!\n";
         firstName.clear(); lastName.clear(); nickname.clear();
-        phoneNumber.clear(); darkestSecret.clear();        
+        phoneNumber.clear(); darkestSecret.clear();
+        return false;  
     }
+    
+    return true; 
 }
+
 void    PhoneBook::get_infos()
 {
     if(count == 0)
@@ -127,7 +141,8 @@ void    PhoneBook::get_infos()
 void    PhoneBook::add_infos()
 {
     Contact newcontact;
-    newcontact.set_contact();
+    if(!newcontact.set_contact())
+            return;
     if(newcontact.is_empty())
         return ;
     contacts[nextIndex] = newcontact;
@@ -136,6 +151,13 @@ void    PhoneBook::add_infos()
     nextIndex = (nextIndex + 1 ) % 8;
     std::cout << "✅ Contact added successfully!\n";
 }
+bool checkEOF() {
+    if (std::cin.eof()) {
+        std::cout << "\n👋 Goodbye!\n";
+        return true;
+    }
+    return false;
+}
 int main()
 {
     PhoneBook phonebook;
@@ -143,13 +165,17 @@ int main()
 
     while(true)
     {
-        std::cout << "Enter a command > " ;
-        std::getline(std::cin, str);
+        if (checkEOF()) break;
+        std::cout << "Enter a command > ";
+        if (!std::getline(std::cin, str)) {
+            std::cout << "👋 Goodbye!\n";
+            break;
+        }
         if(str == "ADD")
             phonebook.add_infos();
         else if(str == "SEARCH")
             phonebook.get_infos();
-        else if(str == "EXIT" || std::cin.eof())
+        else if(str == "EXIT")
         {
             std::cout << "👋 Goodbye!\n";
             break;

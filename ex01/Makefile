@@ -15,11 +15,13 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CPP) $(FLAGS) $(OBJ) -o $@
 
-%.o:%.cpp
+%.o:%.cpp Contact.h PhoneBook.h
 	$(CPP) $(FLAGS) -c  $< -o $@
 
 clean:
 	rm -rf $(OBJ)
+
+re : fclean all 
 
 fclean : clean
 	rm -rf $(NAME)
