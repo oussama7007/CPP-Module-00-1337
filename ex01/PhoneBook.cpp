@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 00:39:54 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/20 16:03:26 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/21 00:46:50 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ bool    is_invalid(std::string &word)
     for(size_t i = 0; i < word.length(); ++i)
     {
             unsigned char c = word[i];
-            if(c < 32 || c > 126)
-                    return true;
+            if(c < 32)
+                return true;
     }
     return false;
 }
@@ -135,7 +135,6 @@ void    PhoneBook::get_infos()
         std::cout << "❌ Invalid index!\n";
     else 
         contacts[index].display_full();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 }
 void    PhoneBook::add_infos()

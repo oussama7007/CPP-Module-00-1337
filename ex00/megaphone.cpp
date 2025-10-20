@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/25 23:20:35 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/12 11:49:26 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/21 00:21:23 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main(int ac, char *av[])
                 std::string word = av[j];
                 for(int i = 0; word[i]; i++)
                 {
-                    if(word[i] >= 'a' &&word[i] <= 'z')
-                        word[i] = std::toupper(word[i]);
+                    word[i] = std::toupper(word[i]);
                     std::cout << word[i];
                 } 
+                std::cout << " ";
             }
         }
         else 
