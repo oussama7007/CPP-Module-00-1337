@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 00:39:54 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/21 00:46:50 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/21 19:03:59 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ void    PhoneBook::get_infos()
         std::cout << "❌ Invalid index!\n";
     else 
         contacts[index].display_full();
-
+    std::cin.ignore();
 }
 void    PhoneBook::add_infos()
 {
