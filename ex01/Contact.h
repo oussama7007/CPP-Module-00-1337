@@ -6,7 +6,7 @@
 /*   By: oait-si- <oait-si-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 11:38:41 by oait-si-          #+#    #+#             */
-/*   Updated: 2025/10/20 16:06:17 by oait-si-         ###   ########.fr       */
+/*   Updated: 2025/10/23 10:13:37 by oait-si-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-
+          
 # include <iostream>
 # include <string>
 
